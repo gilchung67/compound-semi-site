@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <div className="font-sans text-gray-800 bg-gray-50 min-h-screen">
-      
+
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +51,7 @@ const App = () => {
                 Compound<span className="text-blue-600">Semi</span>.ai
               </div>
             </div>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="text-gray-600 hover:text-blue-600 font-medium transition">Expertise</a>
@@ -172,7 +172,7 @@ const App = () => {
             <div className="relative">
               <div className="bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl p-8 shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
                 <h3 className="text-2xl font-bold mb-4">Principal Consultant</h3>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center text-blue-600 font-bold text-xl">
                     GC
@@ -208,7 +208,7 @@ const App = () => {
                      <a href="mailto:gil.chung@compoundsemi.ai" className="text-blue-600 hover:underline">gil.chung@compoundsemi.ai</a>
                    </div>
                 </div>
-                
+
                 <div className="flex items-start">
                    <Activity className="h-6 w-6 text-blue-600 mr-3 mt-1" />
                    <div className="flex flex-col">
@@ -252,4 +252,4 @@ const App = () => {
   );
 };
 
-export default App;VS
+export default App;
