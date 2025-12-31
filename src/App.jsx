@@ -16,6 +16,16 @@ const App = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Handle Form Submission (Opens User's Email Client)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.elements.email.value;
+    const message = e.target.elements.message.value;
+
+    // Constructs a mailto link with the user's message
+    window.location.href = `mailto:gil.chung@compoundsemi.ai?subject=Website Inquiry from ${email}&body=From: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+  };
+
   const services = [
     {
       title: "Compound Material Growth and Processing",
@@ -218,14 +228,14 @@ const App = () => {
                 </div>
               </div>
 
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                  <input type="email" id="email" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white p-2 border" placeholder="you@company.com" />
+                  <input type="email" id="email" name="email" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white p-2 border" placeholder="you@company.com" required />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                  <textarea id="message" rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white p-2 border" placeholder="Briefly describe your project needs..."></textarea>
+                  <textarea id="message" name="message" rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white p-2 border" placeholder="Briefly describe your project needs..." required></textarea>
                 </div>
                 <button type="submit" className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition flex items-center justify-center">
                   Send Inquiry <ArrowRight className="ml-2 h-4 w-4" />
