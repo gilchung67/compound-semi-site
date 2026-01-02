@@ -47,11 +47,11 @@ const App = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              {/* Logo Image Logic */}
+              {/* Logo Image Logic - Using logo2.png to ensure fresh load */}
               <img 
                 src="/logo2.png" 
                 alt="CompoundSemi.ai Logo" 
-                className="h-12 w-auto mr-3 object-contain" 
+                className="h-20 w-auto mr-3 object-contain" 
                 onError={(e) => {
                   e.target.style.display = 'none'; // Safely hide if missing
                 }}
@@ -108,7 +108,8 @@ const App = () => {
               <span className="text-blue-600">Compound Semiconductors</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-              Specialized consulting in material growth, defect metrology, and device yield for the next generation of power and RF electronics.
+              Specialized consulting in material growth, defect metrology, and device yield for the next generation of power and RF electronics. <br className="hidden md:block" />
+              <span className="font-semibold text-blue-800">The fusion of Semiconductor Physics (First Principles) with Artificial Intelligence (Data-Driven Insights).</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a href="#contact" className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:text-lg transition shadow-md">
