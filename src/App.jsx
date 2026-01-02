@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Cpu, Activity, Search, BarChart2, Mail, MapPin, Linkedin, ArrowRight, BookOpen } from 'lucide-react';
+import { Menu, X, ChevronRight, Cpu, Activity, Search, Mail, BookOpen } from 'lucide-react';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,16 +15,6 @@ const App = () => {
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  // Handle Form Submission (Opens User's Email Client)
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.elements.email.value;
-    const message = e.target.elements.message.value;
-
-    // Constructs a mailto link with the user's message
-    window.location.href = `mailto:gil.chung@compoundsemi.ai?subject=Website Inquiry from ${email}&body=From: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-  };
 
   const services = [
     {
@@ -51,7 +41,7 @@ const App = () => {
 
   return (
     <div className="font-sans text-gray-800 bg-gray-50 min-h-screen">
-
+      
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +51,7 @@ const App = () => {
                 Compound<span className="text-blue-600">Semi</span>.ai
               </div>
             </div>
-
+            
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="text-gray-600 hover:text-blue-600 font-medium transition">Expertise</a>
@@ -169,7 +159,7 @@ const App = () => {
                 {[
                   "Michigan-based, serving Global Clients",
                   "Expertise in compound semiconductors including SiC and GaN material systems",
-                  "Customized Metrology Development",
+                  "Defect Investigation and Customized Metrology Development",
                   "Fast turnaround on Root Cause Analysis"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
@@ -181,15 +171,15 @@ const App = () => {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl p-8 shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
-                <h3 className="text-2xl font-bold mb-4">Principal Consultant</h3>
-
+                <h3 className="text-2xl font-bold mb-4">Lead Consultant</h3>
+                
                 <div className="flex items-center space-x-4">
                   <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center text-blue-600 font-bold text-xl">
                     GC
                   </div>
                   <div>
                     <p className="font-bold">Gil Chung</p>
-                    <p className="text-blue-200 text-sm">Founder & Lead Engineer</p>
+                    <p className="text-blue-200 text-sm">Founder & Lead Consultant</p>
                   </div>
                 </div>
               </div>
@@ -200,48 +190,33 @@ const App = () => {
 
       {/* CTA / Contact Section */}
       <section id="contact" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-blue-50 rounded-2xl p-8 md:p-12 shadow-sm border border-blue-100">
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <h2 className="text-3xl font-extrabold text-gray-900">Let's solve your yield challenges</h2>
               <p className="mt-4 text-lg text-gray-600">
                 Based in Michigan. Available for remote analysis and on-site consulting.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="flex items-start">
-                   <Mail className="h-6 w-6 text-blue-600 mr-3 mt-1" />
-                   <div className="flex flex-col">
-                     <span className="text-gray-900 font-bold">General Inquiries</span>
-                     <a href="mailto:gil.chung@compoundsemi.ai" className="text-blue-600 hover:underline">gil.chung@compoundsemi.ai</a>
-                   </div>
-                </div>
-
-                <div className="flex items-start">
-                   <Activity className="h-6 w-6 text-blue-600 mr-3 mt-1" />
-                   <div className="flex flex-col">
-                     <span className="text-gray-900 font-bold">Principal Consultant</span>
-                     <a href="mailto:gil.chung@compoundsemi.ai" className="text-blue-600 hover:underline">gil.chung@compoundsemi.ai</a>
-                   </div>
-                </div>
+            <div className="space-y-8">
+              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition">
+                 <Mail className="h-8 w-8 text-blue-600 mr-4" />
+                 <div className="flex flex-col text-left">
+                   <span className="text-gray-900 font-bold text-lg">General Inquiries</span>
+                   <a href="mailto:gil.chung@compoundsemi.ai" className="text-blue-600 text-lg hover:underline">gil.chung@compoundsemi.ai</a>
+                 </div>
               </div>
-
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                  <input type="email" id="email" name="email" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white p-2 border" placeholder="you@company.com" required />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                  <textarea id="message" name="message" rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white p-2 border" placeholder="Briefly describe your project needs..." required></textarea>
-                </div>
-                <button type="submit" className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition flex items-center justify-center">
-                  Send Inquiry <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-              </form>
+              
+              <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition">
+                 <Activity className="h-8 w-8 text-blue-600 mr-4" />
+                 <div className="flex flex-col text-left">
+                   <span className="text-gray-900 font-bold text-lg">Lead Consultant</span>
+                   <a href="mailto:gil.chung@compoundsemi.ai" className="text-blue-600 text-lg hover:underline">gil.chung@compoundsemi.ai</a>
+                 </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
