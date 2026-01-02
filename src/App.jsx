@@ -49,7 +49,7 @@ const App = () => {
             <div className="flex items-center">
               {/* Logo Image Logic */}
               <img 
-                src="/logo.png" 
+                src="/logo2.png" 
                 alt="CompoundSemi.ai Logo" 
                 className="h-12 w-auto mr-3 object-contain" 
                 onError={(e) => {
