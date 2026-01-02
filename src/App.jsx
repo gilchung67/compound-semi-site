@@ -47,6 +47,15 @@ const App = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
+              {/* Logo Image Logic */}
+              <img 
+                src="/logo.png" 
+                alt="CompoundSemi.ai Logo" 
+                className="h-12 w-auto mr-3 object-contain" 
+                onError={(e) => {
+                  e.target.style.display = 'none'; // Safely hide if missing
+                }}
+              />
               <div className="text-2xl font-bold text-blue-900 tracking-tight">
                 Compound<span className="text-blue-600">Semi</span>.ai
               </div>
